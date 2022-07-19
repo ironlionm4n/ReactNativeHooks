@@ -12,6 +12,7 @@ const HomeScreen = (props) => {
       <ComponentsScreen />
       <ComponentsScreen />
       <Button title="Navigate to ListScreen" onPress={()=>{props.navigation.navigate("List")}}/>
+      <Button title="Navigate to ImageScreen" onPress={()=>{props.navigation.navigate("Image")}}/>
     </View>
   )
 }
