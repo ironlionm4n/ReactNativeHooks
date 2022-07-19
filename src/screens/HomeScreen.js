@@ -1,8 +1,9 @@
 import React from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, Button } from 'react-native'
 import ComponentsScreen from './ComponentsScreen'
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
+  console.log(props)
   return (
     <View style={styles.container}>
       <ComponentsScreen />
@@ -10,6 +11,7 @@ const HomeScreen = () => {
       <ComponentsScreen />
       <ComponentsScreen />
       <ComponentsScreen />
+      <Button title="Navigate to ListScreen" onPress={()=>{props.navigation.navigate("List")}}/>
     </View>
   )
 }
