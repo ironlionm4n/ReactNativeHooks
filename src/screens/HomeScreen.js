@@ -5,6 +5,7 @@ import ComponentsScreen from './ComponentsScreen'
 
 const HomeScreen = props => {
   console.log(props)
+
   return (
     <ScrollView>
       <View style={styles.button}>
@@ -13,44 +14,58 @@ const HomeScreen = props => {
           onPress={() => {
             props.navigation.navigate('List')
           }}
-          color='#841584'
-        />
+        >
+          <Text>Navigate to ListScreen</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.button}>
-      <TouchableOpacity
-        onPress={() => {
-          props.navigation.navigate('Image')
-        }}
-        style={styles.button}
-      ><Text>Navigate to ImageScreen</Text></TouchableOpacity>
-      
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate('Image')
+          }}
+        >
+          <Text>Navigate to ImageScreen</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.button}>
-      <TouchableOpacity
-        title='Navigate to CounterScreen'
-        onPress={() => {
-          props.navigation.navigate('Counter')
-        }}
-        style={styles.button}
-      />
+        <TouchableOpacity
+          title='Navigate to CounterScreen'
+          onPress={() => {
+            props.navigation.navigate('Counter')
+          }}
+        >
+          <Text>Navigate to CounterScreen</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.button}>
-      <TouchableOpacity
-        title='Navigate to ComponentScreen'
-        onPress={() => {
-          props.navigation.navigate('Component')
-        }}
-        style={styles.button}
-      />
+        <TouchableOpacity
+          title='Navigate to ComponentScreen'
+          onPress={() => {
+            props.navigation.navigate('Component')
+          }}
+        >
+          <Text>Navigate to ComponentScreen</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.button}>
-      <TouchableOpacity
-        title='Navigate to ColorScreen'
-        onPress={() => {
-          props.navigation.navigate('Color')
-        }}
-        style={styles.button}
-      />
+        <TouchableOpacity
+          title='Navigate to ColorScreen'
+          onPress={() => {
+            props.navigation.navigate('Colors')
+          }}
+        >
+          <Text>Navigate to ColorScreen</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.button}>
+        <TouchableOpacity
+          title='Navigate to ColorScreen'
+          onPress={() => {
+            props.navigation.navigate('Adjustable')
+          }}
+        >
+          <Text>Navigate to AdjustableColorScreen</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   )
@@ -68,7 +83,6 @@ const styles = StyleSheet.create({
     height: 100,
     marginTop: 32,
     marginBottom: 32
-    
   }
 })
 
