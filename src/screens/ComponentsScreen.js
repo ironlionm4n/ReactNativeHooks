@@ -1,17 +1,22 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, Button } from 'react-native'
+import React, { useState } from 'react'
 
 const ComponentsScreen = () => {
   return (
-    <View>
-      <Text>LigmaBawls</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Component</Text>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-    text: {
-      fontSize: 30,
-    }})
+  text: {
+    fontSize: 30
+  },
+  container: {
+    display: 'flex',
+    backgroundColor: 'red'
+  }
+})
 
 export default ComponentsScreen
