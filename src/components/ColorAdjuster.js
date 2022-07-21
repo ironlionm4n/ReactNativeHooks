@@ -1,14 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const ColorAdjuster = ({ title, rgbValue, handleColorAdjustment }) => {
+const ColorAdjuster = ({ title, handleColorAdjustment }) => {
   return (
     <View style={{ alignItems: 'center' }}>
       <Text>{title}</Text>
       <TouchableOpacity
         style={{ padding: 10 }}
         onPress={() => {
-          handleColorAdjustment(title, rgbValue, true)
+          handleColorAdjustment(title.toLowerCase(), 15)
         }}
       >
         <Text style={{ backgroundColor: 'black', color: 'white' }}>
@@ -17,7 +17,7 @@ const ColorAdjuster = ({ title, rgbValue, handleColorAdjustment }) => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          handleColorAdjustment(title, rgbValue, false)
+          handleColorAdjustment(title.toLowerCase(), -15)
         }}
       >
         <Text style={{ backgroundColor: 'black', color: 'white' }}>
