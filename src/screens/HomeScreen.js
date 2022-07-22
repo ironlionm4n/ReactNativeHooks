@@ -15,7 +15,7 @@ const HomeScreen = props => {
             props.navigation.navigate('List')
           }}
         >
-          <Text>Navigate to ListScreen</Text>
+          <Text style={styles.text}>Navigate to ListScreen</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.button}>
@@ -24,7 +24,7 @@ const HomeScreen = props => {
             props.navigation.navigate('Image')
           }}
         >
-          <Text>Navigate to ImageScreen</Text>
+          <Text style={styles.text}>Navigate to ImageScreen</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.button}>
@@ -34,7 +34,7 @@ const HomeScreen = props => {
             props.navigation.navigate('Counter')
           }}
         >
-          <Text>Navigate to CounterScreen</Text>
+          <Text style={styles.text}>Navigate to CounterScreen</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.button}>
@@ -44,7 +44,7 @@ const HomeScreen = props => {
             props.navigation.navigate('Component')
           }}
         >
-          <Text>Navigate to ComponentScreen</Text>
+          <Text style={styles.text}>Navigate to ComponentScreen</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.button}>
@@ -54,7 +54,7 @@ const HomeScreen = props => {
             props.navigation.navigate('Colors')
           }}
         >
-          <Text>Navigate to ColorScreen</Text>
+          <Text style={styles.text}>Navigate to ColorScreen</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.button}>
@@ -64,7 +64,17 @@ const HomeScreen = props => {
             props.navigation.navigate('Adjustable')
           }}
         >
-          <Text>Navigate to AdjustableColorScreen</Text>
+          <Text style={styles.text}>Navigate to AdjustableColorScreen</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.button}>
+        <TouchableOpacity
+          title='Navigate to ColorScreen'
+          onPress={() => {
+            props.navigation.navigate('Text')
+          }}
+        >
+          <Text style={styles.text}>Navigate to TextInputScreen</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -73,16 +83,25 @@ const HomeScreen = props => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'space-evenly'
+    display: 'flex'
   },
   button: {
-    backgroundColor: 'green',
-    width: '100%',
+    backgroundColor: '#fff',
+    width: '90%',
     height: 100,
-    marginTop: 32,
-    marginBottom: 32
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: '5%',
+    marginVertical: '5%',
+    shadowColor: 'rgba(0,0,0,1)',
+    shadowOffset: { height: 1, width: 1 },
+    shadowOpacity: .5,
+    shadowRadius: 10,
+    flexDirection: 'column',
+  },
+  text: {
+    fontSize: 22
   }
 })
 

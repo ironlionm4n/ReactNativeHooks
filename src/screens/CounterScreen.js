@@ -1,26 +1,30 @@
 import { View, Text, StyleSheet, Button } from 'react-native'
-import React, { useState } from 'react'
+import { counterReducer } from '../reducers/CounterReducer.js'
+import React, { useReducer } from 'react'
 
+const INCREMENT_AMOUNT = 1;
 const CounterScreen = () => {
-  const [currentCount, setCurrentCount] = useState(0)
+  const [currentCount, dispatch] = useReducer(counterReducer, {
+    count: 0
+  })
+
+  onHandleCounterChange = (action, payload) => {
+    dispatch({type: action, payload: payload})
+  }
 
   return (
     <View style={styles.container}>
       <Text>Counter</Text>
       <View>
-        <Text>Current Count: {currentCount}</Text>
+        <Text>Current Count: {currentCount.count}</Text>
         <Button
           title='Increment'
-          onPress={() =>
-            setCurrentCount(prevState => {
-              console.log('PrevState: currentCount', currentCount)
-              return (prevState + 1)
-            })
+          onPress={() => onHandleCounterChange('INCREMENT',INCREMENT_AMOUNT)
           }
         />
         <Button
           title='Decrement'
-          onPress={() => setCurrentCount(currentCount - 1)}
+          onPress={() => onHandleCounterChange('DECREMENT', INCREMENT_AMOUNT)}
         />
       </View>
     </View>
@@ -34,7 +38,9 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
-    backgroundColor: 'red'
+    backgroundColor: 'red',
+    padding: 20,
+    margin: 20
   }
 })
 
