@@ -7,6 +7,7 @@ import ImageScreen from './src/screens/ImageScreen'
 import ColorScreen from './src/screens/ColorScreen'
 import CounterScreen from './src/screens/CounterScreen'
 import AdjustableColorScreen from './src/screens/AdjustableColorScreen'
+import TextInputScreen from './src/screens/TextInputScreen'
 
 const navigator = createStackNavigator(
   {
@@ -16,10 +17,11 @@ const navigator = createStackNavigator(
     Image: ImageScreen,
     Colors: ColorScreen,
     Counter: CounterScreen,
-    Adjustable: AdjustableColorScreen
+    Adjustable: AdjustableColorScreen,
+    Text: TextInputScreen,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Text',
     defaultNavigationOptions: {
       title: 'LigmaBawls'
     }
